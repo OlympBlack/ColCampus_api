@@ -1,0 +1,1788 @@
+{
+ "generé_le": "2026-10-19",
+ "source": "https://api-decoupage-benin.onrender.com/departements/{id}",
+ "universites": [
+  {
+   "code": "UAC",
+   "nom": "Université d'Abomey-Calavi",
+   "ville": "Abomey-Calavi",
+   "departement": "Atlantique",
+   "commune": "ABOMEY-CALAVI",
+   "accent": true,
+   "ordre": 1
+  },
+  {
+   "code": "UNA",
+   "nom": "Université Nationale d'Agriculture",
+   "ville": "Porto-Novo",
+   "departement": "Ouémé",
+   "commune": "PORTO-NOVO",
+   "accent": false,
+   "ordre": 2
+  },
+  {
+   "code": "UNSTIM",
+   "nom": "Université Nationale des Sciences, Technologies, Ingénierie et Mathématiques",
+   "ville": "Abomey",
+   "departement": "Zou",
+   "commune": "ABOMEY",
+   "accent": false,
+   "ordre": 3
+  },
+  {
+   "code": "UP",
+   "nom": "Université de Parakou",
+   "ville": "Parakou",
+   "departement": "Borgou",
+   "commune": "PARAKOU",
+   "accent": false,
+   "ordre": 4
+  }
+ ],
+ "quartiers": [
+  {
+   "universite": "UAC",
+   "nom": "Adjagbo",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agassa-Godomey",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agonme",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agonsoundja",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Akassato Centre",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Gbetagbo",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Glo-Tokpa",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Houeke-Gbo",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Houeke-Honou",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Koletin",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kpodji-Les-Monts",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Missessinto",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zekanmey-Dome",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zopah Palmeraie",
+   "arrondissement": "Akassato"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Abikouholi",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agbo-Codji-Sedegbe",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agonkanmey",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Aimevo",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Alegleta",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Amanhoun",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Assrossa",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Atrokpo-Codji",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Cococodji",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Cocotomey",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Dekoungbe-Eglise",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Dekoungbe-Usine",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Denou",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Djekpota",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Djoukpa-Togoudo",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Fandji",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Fignonhou",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Finafa",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ganganzounme",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Gbegnigan-Midokpo",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Gbodje-Womey",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Gninkindji",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Godomey-N'gbeho",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Godomey-Togoudo",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Hedome",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Helouto",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Houakomey",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Hounsa-Agbodokpa",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "La Paix",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Lobozounkpa",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Maria-Gleta",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ningboto",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Nonhouenou",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ounvenoumede",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Plateau",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Salamey",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Sedjannanko",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Sedomey",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Seloli-Fandji",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Sodo",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tankpe",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Togbin-Daho",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Togbin-Kpevi",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tognin-Fandji",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tokpa",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Womey Centre",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Yenandjro",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Yolomahouto",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zounga",
+   "arrondissement": "Godomey"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Adjame",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agongbe",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agonkessa",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Alladacome",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Azonsa",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Djissoukpa",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Domey-Gbo",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Golo-Djigbe",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Golo-Fanto",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Lohoussa",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Missebo-Espace Saint",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Yekon-Aga",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Yekon-Do",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zekanmey",
+   "arrondissement": "Golo-Djigbe"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Adovie",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Akossavie",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Dossounou",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Hevie Centre",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Houinme",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Hounyeva",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Hounzevie",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Sogan",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zoungo",
+   "arrondissement": "Hevie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Anagbo",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Avagbe",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Bozoun",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Djigbo",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Hadjanaho",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kpanroun",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kpanroun-Dodomey",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kpaviedja",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kpe",
+   "arrondissement": "Kpanroun"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Adjagbo-Aidjedo",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Adjaglo-Aidjedo",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ahouato",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Alansankome",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Dassekomey",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Dessato",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kpossidja",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ouedo Centre",
+   "arrondissement": "Ouedo"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ahossougbeta",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Drabo",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Fifonsi",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Houeto",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ouega-Ague",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Ouega-Tokpa",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Some",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Togba Maria-Gleta",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tokan",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tokan Aidegnon",
+   "arrondissement": "Togba"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Adjogansa",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Dangbodji",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Dokomey",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Gbodje",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Gbodjoko",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Houegoudo",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kpotomey",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Sokan",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Wawata",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Wawata-Todja",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Yevie",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Yevie-Nougo",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zinvie-Agoledji",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zinvie-Fandji",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zinvie-Zounme",
+   "arrondissement": "Zinvie"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agamandin",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Agori",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Aifa",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Aitchedji",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Aledjo",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Cite La Victoire",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Cite Les Palmiers",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Gbodjo",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Kansounkpa",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Seme",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tchinangbegbo",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tokpa-Zoungo",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tokpa-Zoungo Nord",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Tokpa-Zoungo Sud",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zogbadje",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zopah",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Zoundja",
+   "arrondissement": "Abomey-Calavi"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Accron-Gogankomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Adjegounle",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Adomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ahouantikomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Akpassa Odo Oba",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Avassa Bagoro Agbokomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ayetoro",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ayimlonfide",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Deguekome",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Dota-Attingbansa-Azonzakomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ganto",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Gbassou-Itabodo",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Gbecon",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Guevie-Zinkomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Hondji-Honnou Filla",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houegbo-Hlinkomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houeyogbe-Gbedji",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houezounmey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Idi-Araba",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ilefie",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Kpota Sandodo",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Lokossa",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Oganla-Gare-Est",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Sadognon-Adjegounle",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Sadognon-Woussa",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Sagbo Kossoukode",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Sokomey-Toffinkomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Togoh - Adankomey",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Vekpa",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Agbokou Aga",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Agbokou Bassodji Mairie",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Agbokou Centre Social",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Agbokou Odo",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Attake Olory-Togbe",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Attake Yidi",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Djegan Daho",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Donoukin Lissessa",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Gbezounkpa",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Guevie Djeganto",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Hinkoude",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Kandevie Radio Hokon",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Koutongbe",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Sedjeko",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Tchinvie",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Zounkpa Houeto",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Adjina Nord",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Adjina Sud",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Avakpa Kpodji",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Avakpa-Tokpa",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Djassin Daho",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Djassin Zounme",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Foun-Foun Djaguidi",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Foun-Foun Gbego",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Foun-Foun Sodji",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Foun-Foun Tokpa",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Hassou Ague",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Oganla Atakpame",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Oganla Nord",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Oganla Poste",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Oganla Soke",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Oganla Sud",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ouinlinda Aholoukomey",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ouinlinda Hopital",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Zebou Aga",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Zebou Ahouangbo",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Zebou -Itatigri",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Zebou -Masse",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Anavie",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Anavie Voirie",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Djegan Kpevi",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Dodji",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Gbedjromede Fusion",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Gbodje",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Guevie",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Hlogou Ou Hlongou",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houinme Chateau D'eau",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houinme Djaguidi",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houinme Ganto",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houinme Gbedjromede",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Hounsa",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Hounsouko",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Kandevie Missogbe",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Kandevie Owode",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Kpogbonme",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Seto - Gbodje",
+   "arrondissement": "4eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Akonaboe",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Djlado",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Dowa",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Dowa Aliogbogo",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Dowa Dedome",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Houinvie",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Louho",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ouando",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ouando Clekanme",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Ouando Kotin",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Tokpota Dadjrougbe",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Tokpota Davo",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Tokpota Vedo",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Tokpota Zebe",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNA",
+   "nom": "Tokpota Zinlivali",
+   "arrondissement": "5eme Arrondissement"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Akouessa",
+   "arrondissement": "Agbokpa"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Dokon",
+   "arrondissement": "Agbokpa"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Gnansata",
+   "arrondissement": "Agbokpa"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Oueme",
+   "arrondissement": "Agbokpa"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Sonou Akouta",
+   "arrondissement": "Agbokpa"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Sonou Fiye",
+   "arrondissement": "Agbokpa"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Allomakanme",
+   "arrondissement": "Detohou"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Detohou Centre",
+   "arrondissement": "Detohou"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Gueguezogon",
+   "arrondissement": "Detohou"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Kodji Centre",
+   "arrondissement": "Detohou"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Wo-Tangadji",
+   "arrondissement": "Detohou"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Houao",
+   "arrondissement": "Sehoun"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Houeli",
+   "arrondissement": "Sehoun"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Lele",
+   "arrondissement": "Sehoun"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Sehoun",
+   "arrondissement": "Sehoun"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Dilikotcho",
+   "arrondissement": "Zounzonme"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Gbehizankon",
+   "arrondissement": "Zounzonme"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Legbaholi",
+   "arrondissement": "Zounzonme"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Lokokanme",
+   "arrondissement": "Zounzonme"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Zounzonme",
+   "arrondissement": "Zounzonme"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Djegbe",
+   "arrondissement": "Djegbe"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Djime",
+   "arrondissement": "Djegbe"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Gbecon-Houegbo",
+   "arrondissement": "Djegbe"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Goho",
+   "arrondissement": "Djegbe"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Sogbo-Aliho",
+   "arrondissement": "Djegbe"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Sohoue",
+   "arrondissement": "Djegbe"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Tohizanly",
+   "arrondissement": "Djegbe"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Agblome",
+   "arrondissement": "Hounli"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Agnangnan",
+   "arrondissement": "Hounli"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Azali",
+   "arrondissement": "Hounli"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Gbekon Hounli",
+   "arrondissement": "Hounli"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Vekpa",
+   "arrondissement": "Hounli"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Wankon",
+   "arrondissement": "Hounli"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Zassa",
+   "arrondissement": "Hounli"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Adandokpodji",
+   "arrondissement": "Vidole"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Agbodjannangan",
+   "arrondissement": "Vidole"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Ahouaga",
+   "arrondissement": "Vidole"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Dogueme",
+   "arrondissement": "Vidole"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Dota",
+   "arrondissement": "Vidole"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Hountondji",
+   "arrondissement": "Vidole"
+  },
+  {
+   "universite": "UNSTIM",
+   "nom": "Sada",
+   "arrondissement": "Vidole"
+  },
+  {
+   "universite": "UP",
+   "nom": "Alaga",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Albarika",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Bakinkoura",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Bakperou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Banikanni-Douwerou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Beyarou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Bosso-Camps-Peulhs",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Boundarou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Camp-Adagbe",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Damagourou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Depot",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Gaanon",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Gounin",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Kabassira",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Kadera",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Kpebie",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Kperou-Guera",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Madina",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Monnon",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Oueze",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Sawararou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Sinagourou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Sourou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Thian",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Titirou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Tourou-Dispensaire",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Tourou-Palais-Royal",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Worou-Tokorou",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Zazira",
+   "arrondissement": "1er Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Agba Agba",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Assagbinin Baka",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Bakounourou",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Banikanni",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Banikanni-Eni",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Banikanni-Madjatom",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Baparape",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Goromosso",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Korobororou",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Korobororou-Peulh",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Ladjifarani",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Ladjifarani-Petit Pere",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Lemanda",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Nima-Sokounon",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Rose-Croix Bah Mora",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Woubekou-Gah",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Zongo-Zenon",
+   "arrondissement": "2eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Amanwignon",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Dokparou",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Gah",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Ganou",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Gbira",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Guema",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Nikkikperou",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Swinrou-Kpassagambou",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Tranza",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Wansirou",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Wore",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UP",
+   "nom": "Zongo",
+   "arrondissement": "3eme Arrondissement"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Bidossessi",
+   "arrondissement": null,
+   "source": "locale"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Arconville",
+   "arrondissement": null,
+   "source": "locale"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Acacia",
+   "arrondissement": null,
+   "source": "locale"
+  },
+  {
+   "universite": "UAC",
+   "nom": "Calavi-Bas",
+   "arrondissement": null,
+   "source": "locale"
+  }
+ ]
+}
