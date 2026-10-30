@@ -25,5 +25,15 @@ class LoginRequest extends FormRequest
             'password' => ['required', 'string', 'min:8'],
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'email.required' => "L'adresse email est requise.",
+            'email.email' => "L'adresse email n'est pas valide.",
+            'password.required' => "Le mot de passe est obligatoire.",
+            'password.min' => "Le mot de passe doit comporter au moins 8 caractères.",
+        ];
+    }
 }
 ?>

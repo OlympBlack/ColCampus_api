@@ -38,10 +38,12 @@ Route::get('/collections', [\App\Http\Controllers\Api\CollectionImmobiliereContr
 Route::get('/collections/{slug}', [\App\Http\Controllers\Api\CollectionImmobiliereController::class, 'show']);
 
 // Auth Public
-Route::post('/register', [RegisterController::class, 'register'])->middleware('throttle:5,1');
-Route::post('/verify-otp', [OtpController::class, 'verify'])->middleware('throttle:8,1');
-Route::post('/resend-otp', [OtpController::class, 'resend'])->middleware('throttle:3,1');
-Route::post('/login', [LoginController::class, 'login'])->middleware('throttle:8,1');
+Route::post('/register', [RegisterController::class, 'register'])->middleware('throttle:5,1')->name('api.register');
+Route::post('/verify-otp', [OtpController::class, 'verify'])->middleware('throttle:8,1')->name('api.verify-otp');
+Route::post('/resend-otp', [OtpController::class, 'resend'])->middleware('throttle:3,1')->name('api.resend-otp');
+Route::post('/login', [LoginController::class, 'login'])->middleware('throttle:8,1')->name('api.login');
+Route::get('/auth/validation/{id}/{hash}', [RegisterController::class, 'validateAccountFromEmail'])->name('api.auth.validation');
+Route::get('/auth/validate-account/{id}/{hash}', [RegisterController::class, 'validateAccountFromEmail'])->name('api.auth.validate-account');
 
 // Protected Routes
 Route::middleware('auth:sanctum')->group(function () {

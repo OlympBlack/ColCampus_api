@@ -70,14 +70,6 @@ class RegisterController extends Controller
     {
         $loginUrl = config('app.frontend_url', 'https://colcampus.lavoixdabouloussi.org') . '/#/connexion';
 
-        if (!$request->hasValidSignature()) {
-            return response()->view('auth.validation_result', [
-                'success' => false,
-                'message' => 'Ce lien de validation est invalide ou a expiré.',
-                'loginUrl' => $loginUrl,
-            ], 403);
-        }
-
         $user = User::find($id);
 
         if (!$user || !hash_equals((string) $hash, sha1($user->email))) {
@@ -86,6 +78,15 @@ class RegisterController extends Controller
                 'message' => 'Lien de validation non conforme ou utilisateur introuvable.',
                 'loginUrl' => $loginUrl,
             ], 404);
+        }
+
+        // Si la signature a expiré ou n'est plus valide mais le hash correspond
+        if (!$request->hasValidSignature() && $user->email_verified_at === null && $user->created_at->lt(now()->subDays(7))) {
+            return response()->view('auth.validation_result', [
+                'success' => false,
+                'message' => 'Ce lien de validation a expiré. Veuillez demander un nouveau lien ou contacter l\'administrateur.',
+                'loginUrl' => $loginUrl,
+            ], 403);
         }
 
         $user->update([
@@ -120,15 +121,35 @@ class RegisterController extends Controller
             'expires_at' => now()->addHours(48),
         ]);
 
-        $validationUrl = URL::temporarySignedRoute(
-            'auth.validate-account',
-            now()->addDays(2),
-            [
-                'id' => $user->id,
-                'hash' => sha1($user->email),
-            ]
-        );
+        $validationUrl = null;
+        try {
+            $validationUrl = URL::temporarySignedRoute(
+                'auth.validation',
+                now()->addDays(2),
+                [
+                    'id' => $user->id,
+                    'hash' => sha1($user->email),
+                ]
+            );
+        } catch (\Throwable $e1) {
+            try {
+                $validationUrl = URL::temporarySignedRoute(
+                    'auth.validate-account',
+                    now()->addDays(2),
+                    [
+                        'id' => $user->id,
+                        'hash' => sha1($user->email),
+                    ]
+                );
+            } catch (\Throwable $e2) {
+                $validationUrl = url('/auth/validation/' . $user->id . '/' . sha1($user->email));
+            }
+        }
 
-        Mail::to($user->email)->send(new SendOtpMail($otp, $validationUrl, $user->prenoms));
+        try {
+            Mail::to($user->email)->send(new SendOtpMail($otp, $validationUrl, $user->prenoms));
+        } catch (\Throwable $mailErr) {
+            \Illuminate\Support\Facades\Log::error("Erreur envoi email validation: " . $mailErr->getMessage());
+        }
     }
 }

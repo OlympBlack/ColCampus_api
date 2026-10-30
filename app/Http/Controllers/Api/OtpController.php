@@ -80,16 +80,35 @@ class OtpController extends Controller
         $validationUrl = null;
 
         if ($user) {
-            $validationUrl = URL::temporarySignedRoute(
-                'auth.validate-account',
-                now()->addDays(2),
-                [
-                    'id' => $user->id,
-                    'hash' => sha1($user->email),
-                ]
-            );
+            try {
+                $validationUrl = URL::temporarySignedRoute(
+                    'auth.validation',
+                    now()->addDays(2),
+                    [
+                        'id' => $user->id,
+                        'hash' => sha1($user->email),
+                    ]
+                );
+            } catch (\Throwable $e1) {
+                try {
+                    $validationUrl = URL::temporarySignedRoute(
+                        'auth.validate-account',
+                        now()->addDays(2),
+                        [
+                            'id' => $user->id,
+                            'hash' => sha1($user->email),
+                        ]
+                    );
+                } catch (\Throwable $e2) {
+                    $validationUrl = url('/auth/validation/' . $user->id . '/' . sha1($user->email));
+                }
+            }
         }
 
-        Mail::to($email)->send(new SendOtpMail($otp, $validationUrl, $user?->prenoms));
+        try {
+            Mail::to($email)->send(new SendOtpMail($otp, $validationUrl, $user?->prenoms));
+        } catch (\Throwable $mailErr) {
+            \Illuminate\Support\Facades\Log::error("Erreur envoi OTP: " . $mailErr->getMessage());
+        }
     }
 }

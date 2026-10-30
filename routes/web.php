@@ -10,3 +10,14 @@ Route::get('/', function () {
 
 Route::get('/auth/validate-account/{id}/{hash}', [RegisterController::class, 'validateAccountFromEmail'])
     ->name('auth.validate-account');
+
+Route::get('/auth/validation/{id}/{hash}', [RegisterController::class, 'validateAccountFromEmail'])
+    ->name('auth.validation');
+
+Route::get('/login', function () {
+    return redirect(config('app.frontend_url', 'https://colcampus.lavoixdabouloussi.org') . '/#/connexion');
+})->name('login');
+
+Route::get('/register', function () {
+    return redirect(config('app.frontend_url', 'https://colcampus.lavoixdabouloussi.org') . '/#/inscription');
+})->name('register');
