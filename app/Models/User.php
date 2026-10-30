@@ -22,6 +22,7 @@ class User extends Authenticatable
         'role',
         'photo_profil',
         'is_verified',
+        'is_valide',
         'statut_verification',
         'commentaire_admin',
         'profile_completed',
@@ -43,6 +44,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'is_verified' => 'boolean',
+            'is_valide' => 'boolean',
             'profile_completed' => 'boolean',
         ];
     }

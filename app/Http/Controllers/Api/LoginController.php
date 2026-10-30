@@ -17,19 +17,20 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
-            if (!$user->is_verified) {
+            if (!$user->is_valide) {
                 Auth::logout();
 
                 return response()->json([
-                    'message' => 'Votre compte n est pas encore verifie. Veuillez valider votre email avec le code OTP.',
-                    'verification_required' => true,
+                    'message' => 'Votre compte n\'a pas encore été validé. Veuillez cliquer sur le lien envoyé dans votre boîte mail ou contacter un administrateur.',
+                    'validation_required' => true,
+                    'is_valide' => false,
                 ], 403);
             }
 
             $token = $user->createToken('auth_token')->plainTextToken;
 
             return response()->json([
-                'message' => 'Connexion reussie',
+                'message' => 'Connexion réussie',
                 'access_token' => $token,
                 'token_type' => 'Bearer',
                 'user' => ApiData::user($user),
@@ -47,7 +48,7 @@ class LoginController extends Controller
         Auth::user()->tokens()->delete();
 
         return response()->json([
-            'message' => 'Deconnexion reussie',
+            'message' => 'Déconnexion réussie',
         ]);
     }
 }

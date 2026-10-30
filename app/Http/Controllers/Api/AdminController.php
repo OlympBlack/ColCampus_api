@@ -177,4 +177,27 @@ class AdminController extends Controller
             ],
         ]);
     }
+
+    /**
+     * Activer / désactiver manuellement la validation d'un compte utilisateur par l'admin.
+     */
+    public function toggleUserValidation(User $user): JsonResponse
+    {
+        $user->is_valide = !$user->is_valide;
+
+        if ($user->is_valide) {
+            $user->is_verified = true;
+            if (!$user->email_verified_at) {
+                $user->email_verified_at = now();
+            }
+        }
+
+        $user->save();
+
+        return response()->json([
+            'message' => $user->is_valide ? 'Compte validé avec succès.' : 'Validation du compte révoquée.',
+            'data' => ApiData::user($user),
+        ]);
+    }
 }
+

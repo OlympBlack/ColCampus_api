@@ -11,9 +11,11 @@ use App\Support\ApiData;
 use App\Support\ProfileDataManager;
 use App\Services\ServicePortefeuillePublications;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\URL;
 
 class RegisterController extends Controller
 {
@@ -33,6 +35,7 @@ class RegisterController extends Controller
                 'telephone' => $validated['telephone'],
                 'role' => $validated['role'],
                 'is_verified' => false,
+                'is_valide' => false,
                 'statut_verification' => 'quarantaine',
                 'commentaire_admin' => null,
                 'profile_completed' => false,
@@ -45,7 +48,7 @@ class RegisterController extends Controller
                 app(ServicePortefeuillePublications::class)->initialiserPortefeuille($user);
             }
 
-            $this->generateAndSendOtp($user->email);
+            $this->generateAndSendOtpAndLink($user);
 
             return $user->fresh(['profilEtudiant', 'profilDemarcheur', 'profilBoutique', 'documentsIdentite']);
         });
@@ -53,7 +56,7 @@ class RegisterController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
-            'message' => 'Utilisateur cree avec succes. Un code de verification a ete envoye a votre adresse email.',
+            'message' => 'Inscription enregistrée ! Un email avec un lien de validation et un code vous a été envoyé.',
             'access_token' => $token,
             'token_type' => 'Bearer',
             'user' => ApiData::user($user),
@@ -61,20 +64,71 @@ class RegisterController extends Controller
     }
 
     /**
-     * Generate and send a 6-digit OTP.
+     * Validation du compte via le clic sur le lien dans l'email.
      */
-    private function generateAndSendOtp(string $email): void
+    public function validateAccountFromEmail(Request $request, $id, $hash)
+    {
+        $loginUrl = config('app.frontend_url', 'https://colcampus.lavoixdabouloussi.org') . '/#/connexion';
+
+        if (!$request->hasValidSignature()) {
+            return response()->view('auth.validation_result', [
+                'success' => false,
+                'message' => 'Ce lien de validation est invalide ou a expiré.',
+                'loginUrl' => $loginUrl,
+            ], 403);
+        }
+
+        $user = User::find($id);
+
+        if (!$user || !hash_equals((string) $hash, sha1($user->email))) {
+            return response()->view('auth.validation_result', [
+                'success' => false,
+                'message' => 'Lien de validation non conforme ou utilisateur introuvable.',
+                'loginUrl' => $loginUrl,
+            ], 404);
+        }
+
+        $user->update([
+            'is_valide' => true,
+            'is_verified' => true,
+            'email_verified_at' => now(),
+        ]);
+
+        // Nettoyage des OTPs en attente
+        EmailOtp::where('email', $user->email)->delete();
+
+        return response()->view('auth.validation_result', [
+            'success' => true,
+            'user' => $user,
+            'message' => 'Félicitations ' . $user->prenoms . ' ! Votre compte a été validé avec succès.',
+            'loginUrl' => $loginUrl . '?validated=1',
+        ]);
+    }
+
+    /**
+     * Generate 6-digit OTP and signed email validation URL, then send email.
+     */
+    public function generateAndSendOtpAndLink(User $user): void
     {
         $otp = (string) random_int(100000, 999999);
 
-        EmailOtp::where('email', $email)->delete();
+        EmailOtp::where('email', $user->email)->delete();
 
         EmailOtp::create([
-            'email' => $email,
+            'email' => $user->email,
             'otp' => $otp,
-            'expires_at' => now()->addHours(24),
+            'expires_at' => now()->addHours(48),
         ]);
 
-        Mail::to($email)->send(new SendOtpMail($otp));
+        $validationUrl = URL::temporarySignedRoute(
+            'auth.validate-account',
+            now()->addDays(2),
+            [
+                'id' => $user->id,
+                'hash' => sha1($user->email),
+            ]
+        );
+
+        Mail::to($user->email)->send(new SendOtpMail($otp, $validationUrl, $user->prenoms));
     }
 }

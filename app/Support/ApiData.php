@@ -45,6 +45,7 @@ class ApiData
             'role' => $user->role,
             'photo_profil' => self::fileUrl($user->photo_profil),
             'is_verified' => (bool) $user->is_verified,
+            'is_valide' => (bool) ($user->is_valide ?? false),
             'profile_completed' => (bool) $user->profile_completed,
             'statut_verification' => $user->statut_verification,
             'commentaire_admin' => $user->commentaire_admin,

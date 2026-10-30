@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
@@ -17,9 +16,11 @@ class SendOtpMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public string $otp)
-    {
-        //
+    public function __construct(
+        public string $otp,
+        public ?string $validationUrl = null,
+        public ?string $userName = null
+    ) {
     }
 
     /**
@@ -28,7 +29,7 @@ class SendOtpMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Validation de votre compte - ColCampus',
+            subject: 'Activez votre compte ColCampus',
         );
     }
 
