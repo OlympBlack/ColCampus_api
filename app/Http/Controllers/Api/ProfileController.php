@@ -58,18 +58,18 @@ class ProfileController extends Controller
         $rules = [];
         if ($user->role === 'etudiant') {
             $rules = [
-                'carte_etudiant' => 'required_without:cip|file|mimes:pdf,jpg,jpeg,png|max:5120',
-                'cip' => 'required_without:carte_etudiant|file|mimes:pdf,jpg,jpeg,png|max:5120',
+                'carte_etudiant' => 'required_without:cip|file|mimes:pdf,jpg,jpeg,png,webp',
+                'cip' => 'required_without:carte_etudiant|file|mimes:pdf,jpg,jpeg,png,webp',
             ];
         } elseif ($user->role === 'demarcheur') {
             $rules = [
-                'ifu_doc' => 'required|file|mimes:pdf,jpg,jpeg,png|max:5120',
-                'piece_identite' => 'required|file|mimes:pdf,jpg,jpeg,png|max:5120',
+                'ifu_doc' => 'required|file|mimes:pdf,jpg,jpeg,png,webp',
+                'piece_identite' => 'required|file|mimes:pdf,jpg,jpeg,png,webp',
             ];
         } elseif ($user->role === 'boutique') {
             $rules = [
-                'ifu_doc' => 'required|file|mimes:pdf,jpg,jpeg,png|max:5120',
-                'rccm_doc' => 'required|file|mimes:pdf,jpg,jpeg,png|max:5120',
+                'ifu_doc' => 'required|file|mimes:pdf,jpg,jpeg,png,webp',
+                'rccm_doc' => 'required|file|mimes:pdf,jpg,jpeg,png,webp',
             ];
         }
 

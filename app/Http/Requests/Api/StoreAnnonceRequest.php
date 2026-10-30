@@ -31,7 +31,7 @@ class StoreAnnonceRequest extends FormRequest
             'nombre_places' => ['nullable', 'integer', 'min:1', 'max:50'],
             'statut_disponibilite' => ['nullable', 'in:available,taken,pending'],
             'medias' => ['nullable', 'array', 'max:6'],
-            'medias.*' => ['file', 'image', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
+            'medias.*' => ['file', 'image', 'mimes:jpg,jpeg,png,webp'],
         ];
     }
 

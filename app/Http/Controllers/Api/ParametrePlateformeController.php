@@ -32,7 +32,7 @@ class ParametrePlateformeController extends Controller
             'nom_plateforme' => ['nullable', 'string', 'max:255'],
             'slogan' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:1000'],
-            'logo' => ['nullable', 'file', 'image', 'max:5120'], // Max 5MB
+            'logo' => ['nullable', 'file', 'image'],
             'logo_url' => ['nullable', 'string', 'max:500'],
             'campus_localisation' => ['nullable', 'string', 'max:255'],
             'telephone' => ['nullable', 'string', 'max:50'],

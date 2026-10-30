@@ -18,7 +18,7 @@ class StoreKycDocumentsRequest extends FormRequest
             'documents' => ['required', 'array', 'min:1'],
             'documents.*.type_piece' => ['required', 'string', 'in:CARTE_ETUDIANT,CIP,IFU,RCCM'],
             'documents.*.numero_piece' => ['required', 'string', 'max:255'],
-            'documents.*.fichier' => ['required', 'file', 'mimes:jpg,jpeg,png,pdf', 'max:5120'],
+            'documents.*.fichier' => ['required', 'file', 'mimes:jpg,jpeg,png,pdf'],
         ];
     }
 

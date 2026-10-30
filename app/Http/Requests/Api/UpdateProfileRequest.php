@@ -33,7 +33,7 @@ class UpdateProfileRequest extends FormRequest
                 Rule::unique('users', 'email')->ignore($user?->id),
             ],
             'telephone' => ['required', 'string', 'max:255'],
-            'photo_profil' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:4096'],
+            'photo_profil' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp'],
 
             'etablissement' => [Rule::requiredIf($role === 'etudiant'), 'string', 'max:255'],
             'universite_id' => ['nullable', 'integer', 'exists:universites,id'],
@@ -63,7 +63,7 @@ class UpdateProfileRequest extends FormRequest
             'nom_boutique' => [Rule::requiredIf($role === 'boutique'), 'string', 'max:255'],
             'categorie' => [Rule::requiredIf($role === 'boutique'), 'string', 'max:255'],
             'adresse_physique' => [Rule::requiredIf($role === 'boutique'), 'string', 'max:1000'],
-            'logo_boutique' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
+            'logo_boutique' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp'],
         ];
     }
 }
