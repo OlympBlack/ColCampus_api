@@ -136,16 +136,39 @@ class AnnonceMessageController extends Controller
 
     public function storeConversation(Request $request, Conversation $conversation): JsonResponse
     {
-        $request->validate(['message' => 'required|string|max:1000']);
+        $request->validate([
+            'message' => 'nullable|string|max:1000',
+            'audio' => 'nullable|file',
+            'duration' => 'nullable|numeric',
+        ]);
         $sender = $request->user();
 
         if ($conversation->sender_id !== $sender->id && $conversation->receiver_id !== $sender->id) {
             abort(403, 'Acces refuse.');
         }
 
+        $mediaUrl = null;
+        $type = 'text';
+        $duration = null;
+
+        if ($request->hasFile('audio')) {
+            $path = $request->file('audio')->store('vocaux', 'public');
+            $mediaUrl = asset('storage/' . $path);
+            $type = 'audio';
+            $duration = $request->input('duration') ? (int) round((float) $request->input('duration')) : null;
+        }
+
+        $content = $request->input('message') ?: ($type === 'audio' ? 'Message vocal' : '');
+        if (empty($content) && !$mediaUrl) {
+            return response()->json(['message' => 'Le message ne peut pas être vide.'], 422);
+        }
+
         $message = $conversation->messages()->create([
             'user_id' => $sender->id,
-            'content' => $request->input('message'),
+            'type' => $type,
+            'content' => $content,
+            'media_url' => $mediaUrl,
+            'duration' => $duration,
             'is_read' => false,
         ]);
 
