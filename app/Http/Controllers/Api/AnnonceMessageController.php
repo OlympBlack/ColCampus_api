@@ -14,6 +14,8 @@ use App\Notifications\AvisMessageNotification;
 use App\Support\ApiData;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Schema;
 
 class AnnonceMessageController extends Controller
 {
@@ -90,20 +92,33 @@ class AnnonceMessageController extends Controller
             'is_read' => false,
         ]);
 
-        $conversation->forceFill([
-            'last_message_at' => $message->created_at,
-        ])->save();
-
-        $conversation->loadMissing(['sender', 'receiver']);
-        $recipient = (int) $conversation->sender_id === (int) $sender->id ? $conversation->receiver : $conversation->sender;
-
-        if ($recipient) {
-            $recipient->notify(new AnnouncementMessageNotification($annonce, $sender, $conversation, $message));
+        try {
+            $conversation->forceFill([
+                'last_message_at' => $message->created_at ?? now(),
+            ])->save();
+        } catch (\Throwable $e) {
+            Log::warning("AnnonceMessageController: Failed to update last_message_at: " . $e->getMessage());
         }
 
-        broadcast(new MessageSent($conversation, $message))->toOthers();
+        try {
+            $conversation->loadMissing(['sender', 'receiver']);
+            $recipient = (int) $conversation->sender_id === (int) $sender->id ? $conversation->receiver : $conversation->sender;
 
-        $conversation->loadMissing(['annonce', 'sender', 'receiver', 'messages.user']);
+            if ($recipient) {
+                $recipient->notify(new AnnouncementMessageNotification($annonce, $sender, $conversation, $message));
+            }
+        } catch (\Throwable $e) {
+            Log::warning("AnnonceMessageController: Notification failed: " . $e->getMessage());
+        }
+
+        try {
+            broadcast(new MessageSent($conversation, $message))->toOthers();
+        } catch (\Throwable $e) {
+            Log::warning("AnnonceMessageController: Broadcast failed: " . $e->getMessage());
+        }
+
+        $conversation->unsetRelation('messages');
+        $conversation->load(['annonce', 'sender', 'receiver', 'messages.user']);
 
         return response()->json([
             'message' => 'Votre message a ete transmis au proprietaire de l annonce.',
@@ -137,7 +152,7 @@ class AnnonceMessageController extends Controller
     public function storeConversation(Request $request, Conversation $conversation): JsonResponse
     {
         $request->validate([
-            'message' => 'nullable|string|max:1000',
+            'message' => 'nullable|string|max:5000',
             'audio' => 'nullable|file',
             'duration' => 'nullable|numeric',
         ]);
@@ -152,40 +167,77 @@ class AnnonceMessageController extends Controller
         $duration = null;
 
         if ($request->hasFile('audio')) {
-            $path = $request->file('audio')->store('vocaux', 'public');
-            $mediaUrl = asset('storage/' . $path);
-            $type = 'audio';
-            $duration = $request->input('duration') ? (int) round((float) $request->input('duration')) : null;
+            try {
+                $path = $request->file('audio')->store('vocaux', 'public');
+                $mediaUrl = asset('storage/' . $path);
+                $type = 'audio';
+                $duration = $request->input('duration') ? (int) round((float) $request->input('duration')) : null;
+            } catch (\Throwable $e) {
+                Log::error("AnnonceMessageController: Failed to store audio file: " . $e->getMessage());
+                return response()->json(['message' => 'Impossible d\'enregistrer le fichier audio.'], 500);
+            }
         }
 
-        $content = $request->input('message') ?: ($type === 'audio' ? 'Message vocal' : '');
+        $content = trim((string) $request->input('message'));
+        if (empty($content)) {
+            $content = $type === 'audio' ? 'Message vocal' : '';
+        }
+
         if (empty($content) && !$mediaUrl) {
             return response()->json(['message' => 'Le message ne peut pas être vide.'], 422);
         }
 
-        $message = $conversation->messages()->create([
+        $messageData = [
             'user_id' => $sender->id,
-            'type' => $type,
             'content' => $content,
-            'media_url' => $mediaUrl,
-            'duration' => $duration,
             'is_read' => false,
-        ]);
+        ];
 
-        $conversation->forceFill([
-            'last_message_at' => $message->created_at,
-        ])->save();
-
-        $conversation->loadMissing(['annonce', 'avis', 'sender', 'receiver']);
-        $recipient = (int) $conversation->sender_id === (int) $sender->id ? $conversation->receiver : $conversation->sender;
-
-        if ($recipient && $conversation->annonce) {
-            $recipient->notify(new AnnouncementMessageNotification($conversation->annonce, $sender, $conversation, $message));
-        } elseif ($recipient && $conversation->avis) {
-            $recipient->notify(new AvisMessageNotification($conversation->avis, $sender, $conversation, $message));
+        // Safe insertion whether table has audio columns or not
+        if (Schema::hasColumn('messages', 'type')) {
+            $messageData['type'] = $type;
+            $messageData['media_url'] = $mediaUrl;
+            $messageData['duration'] = $duration;
+        } elseif ($type === 'audio' && $mediaUrl) {
+            $messageData['content'] = '🎵 [Message vocal] ' . $mediaUrl;
         }
 
-        broadcast(new MessageSent($conversation, $message))->toOthers();
+        try {
+            $message = $conversation->messages()->create($messageData);
+        } catch (\Throwable $e) {
+            Log::error("AnnonceMessageController: DB insert error: " . $e->getMessage());
+            return response()->json(['message' => 'Erreur lors de l\'enregistrement du message.'], 500);
+        }
+
+        try {
+            $conversation->forceFill([
+                'last_message_at' => $message->created_at ?? now(),
+            ])->save();
+        } catch (\Throwable $e) {
+            Log::warning("AnnonceMessageController: Could not update last_message_at: " . $e->getMessage());
+        }
+
+        try {
+            $conversation->loadMissing(['annonce', 'avis', 'sender', 'receiver']);
+            $recipient = (int) $conversation->sender_id === (int) $sender->id ? $conversation->receiver : $conversation->sender;
+
+            if ($recipient && $conversation->annonce) {
+                $recipient->notify(new AnnouncementMessageNotification($conversation->annonce, $sender, $conversation, $message));
+            } elseif ($recipient && $conversation->avis) {
+                $recipient->notify(new AvisMessageNotification($conversation->avis, $sender, $conversation, $message));
+            }
+        } catch (\Throwable $e) {
+            Log::warning("AnnonceMessageController: Notification failed: " . $e->getMessage());
+        }
+
+        try {
+            broadcast(new MessageSent($conversation, $message))->toOthers();
+        } catch (\Throwable $e) {
+            Log::warning("AnnonceMessageController: Broadcast failed: " . $e->getMessage());
+        }
+
+        $conversation->unsetRelation('messages');
+        $conversation->load(['annonce', 'avis', 'sender', 'receiver', 'messages.user']);
 
         return response()->json([
             'message' => 'Votre message a ete envoye.',

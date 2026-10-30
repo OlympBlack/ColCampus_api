@@ -66,6 +66,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/avis/{avis}', [AvisController::class, 'destroy']);
     Route::post('/avis/{avis}/contact', [AvisController::class, 'contact']);
 
+    // Messagerie & discussions (accessible aux participants de la conversation)
+    Route::get('/conversations/{conversation}', [AnnonceMessageController::class, 'showConversation']);
+    Route::post('/conversations/{conversation}/messages', [AnnonceMessageController::class, 'storeConversation']);
+    Route::patch('/conversations/{conversation}/read', [AnnonceMessageController::class, 'markConversationAsRead']);
+
     Route::middleware('verified.user')->group(function () {
         Route::post('/annonces', [ControleurAnnonce::class, 'store']);
         Route::get('/forfaits-publications', [ControleurForfait::class, 'index']);
@@ -74,9 +79,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
         Route::get('/annonces/{annonce}/messages', [AnnonceMessageController::class, 'index']);
         Route::post('/annonces/{annonce}/messages', [AnnonceMessageController::class, 'store']);
-        Route::get('/conversations/{conversation}', [AnnonceMessageController::class, 'showConversation']);
-        Route::post('/conversations/{conversation}/messages', [AnnonceMessageController::class, 'storeConversation']);
-        Route::patch('/conversations/{conversation}/read', [AnnonceMessageController::class, 'markConversationAsRead']);
         Route::patch('/annonces/{annonce}', [ManagedAnnonceController::class, 'update']);
         Route::delete('/annonces/{annonce}', [ManagedAnnonceController::class, 'destroy']);
         Route::patch('/annonces/{annonce}/status', [ManagedAnnonceController::class, 'updateStatus']);

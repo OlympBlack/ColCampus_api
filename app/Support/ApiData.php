@@ -249,13 +249,24 @@ class ApiData
     {
         $message->loadMissing('user');
 
+        $mediaUrl = $message->media_url;
+        $type = $message->type ?? ($mediaUrl ? 'audio' : 'text');
+
+        // Backwards-compatibility if audio column was not migrated yet on remote DB:
+        if (!$mediaUrl && str_contains((string) $message->content, 'storage/vocaux/')) {
+            if (preg_match('/(https?:\/\/[^\s]+storage\/vocaux\/[^\s]+)/', (string) $message->content, $matches)) {
+                $mediaUrl = $matches[1];
+                $type = 'audio';
+            }
+        }
+
         return [
             'id' => $message->id,
             'conversation_id' => $message->conversation_id,
             'user_id' => $message->user_id,
-            'type' => $message->type ?? ($message->media_url ? 'audio' : 'text'),
+            'type' => $type,
             'content' => $message->content,
-            'media_url' => $message->media_url,
+            'media_url' => self::fileUrl($mediaUrl),
             'duration' => $message->duration,
             'is_read' => (bool) $message->is_read,
             'created_at' => $message->created_at?->toIso8601String(),
