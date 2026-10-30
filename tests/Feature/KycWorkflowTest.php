@@ -14,6 +14,12 @@ class KycWorkflowTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->seed(\Database\Seeders\UniversiteSeeder::class);
+    }
+
     public function test_registration_creates_role_profile_and_requires_profile_photo(): void
     {
         Storage::fake('public');
@@ -26,6 +32,7 @@ class KycWorkflowTest extends TestCase
             'email' => 'jane@example.test',
             'password' => 'password123',
             'telephone' => '+22997000001',
+            'universite' => 'UAC',
             'photo_profil' => UploadedFile::fake()->image('avatar.jpg'),
             'etablissement' => 'IFRI',
             'filiere' => 'Genie Logiciel',
@@ -117,10 +124,23 @@ class KycWorkflowTest extends TestCase
 
         Sanctum::actingAs($user->fresh());
 
+        $uac = \App\Models\Universite::where('code', 'UAC')->first();
+        $quartier = \App\Models\Quartier::firstOrCreate([
+            'nom' => 'Tankpe',
+        ], [
+            'ville' => 'Abomey-Calavi',
+            'zone' => 'Z1',
+        ]);
+        if ($uac) {
+            $quartier->universite_id = $uac->id;
+            $quartier->save();
+        }
+
         $payload = [
             'titre' => 'Place libre a Tankpe',
             'description' => 'Acces debloque grace au document valide.',
             'quartier' => 'Tankpe',
+            'universite' => 'UAC',
             'loyer' => 18000,
             'caution' => 36000,
             'source_eau' => 'SONEB',
@@ -160,10 +180,23 @@ class KycWorkflowTest extends TestCase
 
         Sanctum::actingAs($user);
 
+        $uac = \App\Models\Universite::where('code', 'UAC')->first();
+        $quartier = \App\Models\Quartier::firstOrCreate([
+            'nom' => 'Zogbadje',
+        ], [
+            'ville' => 'Abomey-Calavi',
+            'zone' => 'Z1',
+        ]);
+        if ($uac) {
+            $quartier->universite_id = $uac->id;
+            $quartier->save();
+        }
+
         $payload = [
             'titre' => 'Place libre a Zogbadje',
             'description' => 'Chambre propre et calme.',
             'quartier' => 'Zogbadje',
+            'universite' => 'UAC',
             'loyer' => 15000,
             'caution' => 30000,
             'source_eau' => 'SONEB',
