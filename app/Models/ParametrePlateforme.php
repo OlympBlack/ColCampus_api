@@ -35,7 +35,7 @@ class ParametrePlateforme extends Model
                 'nom_plateforme' => 'ColCampus',
                 'slogan' => 'La plateforme de logement et de colocation étudiante autour des campus du Bénin',
                 'description' => 'ColCampus met en relation étudiants, bailleurs et démarcheurs autour des quatre grandes universités publiques du Bénin : UAC, UNA, UNSTIM et UP. Trouvez ou proposez facilement une chambre ou une colocation près de votre campus.',
-                'logo_url' => '/logo-colcampus.png',
+                'logo_url' => '/assets/images/logo_colcampus.png',
                 'campus_localisation' => 'Campus UAC, UNA, UNSTIM & UP • Bénin',
                 'telephone' => '+229 01 54 47 00 02',
                 'whatsapp' => '+229 01 54 47 00 02',
@@ -56,7 +56,7 @@ class ParametrePlateforme extends Model
     public function getFormattedLogoUrlAttribute(): string
     {
         if (empty($this->logo_url)) {
-            return '/logo-colcampus.png';
+            return '/assets/images/logo_colcampus.png';
         }
 
         if (str_starts_with($this->logo_url, 'http://') || str_starts_with($this->logo_url, 'https://') || str_starts_with($this->logo_url, '/')) {
