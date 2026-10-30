@@ -190,13 +190,40 @@ class AdminController extends Controller
             if (!$user->email_verified_at) {
                 $user->email_verified_at = now();
             }
+        } else {
+            // Révocation immédiate des sessions actives
+            $user->tokens()->delete();
         }
 
         $user->save();
 
         return response()->json([
-            'message' => $user->is_valide ? 'Compte validé avec succès.' : 'Validation du compte révoquée.',
+            'message' => $user->is_valide ? 'Compte activé et validé avec succès.' : 'Compte désactivé et accès suspendu.',
             'data' => ApiData::user($user),
+        ]);
+    }
+
+    /**
+     * Supprimer définitivement un utilisateur par l'admin.
+     */
+    public function deleteUser(User $user): JsonResponse
+    {
+        if ($user->id === auth()->id()) {
+            return response()->json([
+                'message' => 'Vous ne pouvez pas supprimer votre propre compte administrateur.',
+            ], 400);
+        }
+
+        $user->tokens()->delete();
+
+        if ($user->photo_profil && !str_starts_with($user->photo_profil, 'http')) {
+            \Illuminate\Support\Facades\Storage::disk('public')->delete($user->photo_profil);
+        }
+
+        $user->delete();
+
+        return response()->json([
+            'message' => 'Le compte utilisateur a été supprimé avec succès.',
         ]);
     }
 }
